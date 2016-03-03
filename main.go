@@ -7,12 +7,14 @@ package main
 import (
 	"flag"
 	"fmt"
+	"runtime"
 
 	"github.com/dimiro1/ipe/ipe"
 )
 
 // Main function, initialze the system
 func main() {
+	runtime.GOMAXPROCS(runtime.NumCPU())
 	var filename = flag.String("config", "config.json", "Config file location")
 	flag.Parse()
 
